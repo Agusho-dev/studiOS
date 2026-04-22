@@ -18,6 +18,7 @@ import {
   Users,
 } from "lucide-react";
 import type { ReactNode } from "react";
+import { Logo } from "@/components/ui/logo";
 
 type NavItem = {
   href?: string; // undefined = no demo page built yet
@@ -88,15 +89,18 @@ export function SystemWindow({
       <div className="grid grid-cols-1 md:grid-cols-[180px_1fr] lg:grid-cols-[200px_1fr]">
         {/* Sidebar */}
         <aside className="hidden md:flex flex-col gap-1 border-r border-white/5 bg-ink-950/60 p-3">
-          <div className="flex items-center justify-between px-2 py-2 text-[11px] uppercase tracking-[0.15em] text-mist-500">
-            <span>Monaco · Rondeau</span>
+          <div className="flex items-center justify-between px-1 py-2">
+            <Logo className="h-4 w-auto sm:h-4 opacity-90" />
             <span
-              className="inline-flex items-center gap-1 rounded-full border border-neon-400/20 bg-neon-400/[0.06] px-1.5 py-0.5 text-[9px] text-neon-300 normal-case tracking-normal"
+              className="inline-flex items-center gap-1 rounded-full border border-neon-400/20 bg-neon-400/[0.06] px-1.5 py-0.5 text-[9px] text-neon-300"
               title="Solo los módulos resaltados son clickeables en esta demo"
             >
               <span className="h-1 w-1 rounded-full bg-neon-400" />
               {nav.filter((n) => n.href).length} demos
             </span>
+          </div>
+          <div className="px-1 pb-2 text-[9px] uppercase tracking-[0.2em] text-mist-600">
+            workspace · Rondeau
           </div>
           <div className="flex flex-col gap-0.5">
             {nav.map((n) => {
